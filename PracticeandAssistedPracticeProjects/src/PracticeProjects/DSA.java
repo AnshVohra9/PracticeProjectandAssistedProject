@@ -1,6 +1,7 @@
 package PracticeProjects;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class DSA {
@@ -90,14 +91,33 @@ public class DSA {
     private static void closeApp() {
         System.out.println("Closing your application... \nThank you!");
             }
+    
     private static void searchExpenses(ArrayList<Integer> arrayList) {
         int leng = arrayList.size();
         System.out.println("Enter the expense you need to search:\t");
+        Scanner ab=new Scanner(System.in);
+        int bc=ab.nextInt();
+        int k=0;
+        for (int i=0;i<leng;i++) {
+        	
+        	if(bc==arrayList.get(i)) {
+        		System.out.println("the element is found at:" + arrayList.indexOf(bc));
+        		k=k+1;
+        		break;
+        	}
+        }
+        if(k==0) {
+        	System.out.println("element not found");
+        }
         //Complete the method
+    
     }
     private static void sortExpenses(ArrayList<Integer> arrayList) {
         int arrlength =  arrayList.size();
+        Collections.sort(arrayList);
+        System.out.println("The ascending order for expenses is :" + arrayList);
        //Complete the method. The expenses should be sorted in ascending order.
     }
 }
+
 
